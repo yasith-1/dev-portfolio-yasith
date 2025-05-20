@@ -67,8 +67,8 @@ nav {
   z-index: 100;
 }
 .logo:hover {
-  font-style: italic;
   color: goldenrod;
+  text-decoration: none;
 }
 .logo:active {
   color: gold;
@@ -170,7 +170,7 @@ nav {
   color: beige;
 }
 .navEach::before {
-  content: ".";
+  /* content: "."; */
   font-family: "Josefin Sans", sans-serif;
   font-size: 28px;
   line-height: 1px;
