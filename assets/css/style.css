@@ -171,7 +171,7 @@ nav {
 }
 .navEach::before {
   /* content: "."; */
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 28px;
   line-height: 1px;
   padding-right: 2px;
