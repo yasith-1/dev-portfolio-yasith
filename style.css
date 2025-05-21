@@ -154,8 +154,10 @@ nav {
 }
 
 .bot-animation{
-  margin-top: 100px;
-  width: 100px;
+  display: block;
+  margin-top: 50px;
+  padding-top: 50px;
+  width: 300px;
 }
 
 .navBig {
@@ -1439,12 +1441,12 @@ section {
   .sec2Part {
     max-width: 90vw;
     margin: 8px 0;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 20px;
   }
   
   .sec2Part:nth-of-type(1) {
-    margin-top: 15vh;
+    margin-top: 25vh;
   }
   
   .lineSec2 {
@@ -1621,7 +1623,7 @@ section {
   .sec2Part {
     max-width: 60vw;
     margin: 12px 0;
-    font-size: 17px;
+    font-size: 22px;
     line-height: 24px;
   }
   
