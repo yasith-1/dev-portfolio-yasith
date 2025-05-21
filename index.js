@@ -64,7 +64,7 @@ lightMidSpot.target = targetScene2;
 const lightMidPoint = new THREE.PointLight(lightYellow, 0.05);
 lightMidPoint.position.set(0, 0, -23);
 
-scene.add(lightRight,lightLeft, lightMidSpot, lightMidPoint);
+scene.add(lightRight, lightLeft, lightMidSpot, lightMidPoint);
 
 
 //CAMERA  scene1(-0.3, 0, 5)   scene2(0, -4.5, 10)
@@ -132,12 +132,12 @@ function generateParticle() {
     side: THREE.DoubleSide,
   });
   const particle = new THREE.Mesh(geometry, material);
-    particle.position.set(spaceRandom(2), spaceRandom(2), spaceRandom(2));
-    particle.rotation.set(spaceRandom(), spaceRandom(), spaceRandom());
-    const scale = 0.001 + Math.abs(spaceRandom(0.03));
-    particle.scale.set(scale, scale, scale);
-    particle.speedValue = spaceRandom(1);
-    particlesGroup.add(particle);
+  particle.position.set(spaceRandom(2), spaceRandom(2), spaceRandom(2));
+  particle.rotation.set(spaceRandom(), spaceRandom(), spaceRandom());
+  const scale = 0.001 + Math.abs(spaceRandom(0.03));
+  particle.scale.set(scale, scale, scale);
+  particle.speedValue = spaceRandom(1);
+  particlesGroup.add(particle);
 }
 
 //SCENE2 OBJECTS
@@ -148,7 +148,7 @@ let clock = new THREE.Clock();
 
 const earthGroup = new THREE.Object3D();
 earthGroup.position.set(0, 0, -10);
-earthGroup.applyMatrix4(new THREE.Matrix4().makeRotationX(-Math.PI/2));
+earthGroup.applyMatrix4(new THREE.Matrix4().makeRotationX(-Math.PI / 2));
 scene.add(earthGroup);
 
 function generateEarth() {
@@ -159,7 +159,7 @@ function generateEarth() {
     fog: false,
   });
   geometry.positionData = [];
-  for (let i = 0; i < geometry.attributes.position.count; i++){
+  for (let i = 0; i < geometry.attributes.position.count; i++) {
     wave.fromBufferAttribute(geometry.attributes.position, i);
     geometry.positionData.push(wave.clone());
   }
@@ -177,18 +177,18 @@ function generateCloud() {
     fog: false,
   });
   const cloudGroup = new THREE.Object3D();
-  const cloudAmount = Math.floor(Math.random()*3+2);
-  for (let i = 0; i < cloudAmount; i++ ) {
+  const cloudAmount = Math.floor(Math.random() * 3 + 2);
+  for (let i = 0; i < cloudAmount; i++) {
     const geometry = new THREE.IcosahedronGeometry(1);
     const cloud = new THREE.Mesh(geometry, material);
-    const scale = 0.27/Math.floor(Math.random()*2+1);
+    const scale = 0.27 / Math.floor(Math.random() * 2 + 1);
     cloud.scale.set(scale, scale, scale);
-    cloud.position.set(Math.random()+0.5, -Math.random()/2, Math.random()/3)
-    cloud.rotation.set(Math.random()*Math.PI*2, Math.random()*Math.PI*2, Math.random()*Math.PI*2);
+    cloud.position.set(Math.random() + 0.5, -Math.random() / 2, Math.random() / 3)
+    cloud.rotation.set(Math.random() * Math.PI * 2, Math.random() * Math.PI * 2, Math.random() * Math.PI * 2);
     cloudGroup.add(cloud);
   }
-  cloudGroup.position.set(0, Math.random()*5+2, Math.random()+4.5);
-  cloudGroup.applyMatrix4(new THREE.Matrix4().makeRotationY(Math.PI*2*(Math.random()*10)));
+  cloudGroup.position.set(0, Math.random() * 5 + 2, Math.random() + 4.5);
+  cloudGroup.applyMatrix4(new THREE.Matrix4().makeRotationY(Math.PI * 2 * (Math.random() * 10)));
   earthGroup.add(cloudGroup);
 }
 
@@ -196,11 +196,11 @@ function generateCloud() {
 const starGroup = new THREE.Object3D();
 scene.add(starGroup);
 function generateStar() {
-  const ranSize = Math.random()*0.01+0.01;
+  const ranSize = Math.random() * 0.01 + 0.01;
   const geometry = new THREE.SphereGeometry(ranSize, 8, 8);
   const material = new THREE.MeshStandardMaterial({ color: black, fog: false });
   const star = new THREE.Mesh(geometry, material);
-  star.position.set(Math.random()*18-9, Math.random()*10-9, Math.random()*20-30);
+  star.position.set(Math.random() * 18 - 9, Math.random() * 10 - 9, Math.random() * 20 - 30);
   starGroup.add(star);
 }
 
@@ -211,7 +211,7 @@ let flagVertexCount;
 const airPlaneGroup = new THREE.Object3D();
 airPlaneGroup.position.set(0, -5, -5);
 airPlaneGroup.scale.set(0.35, 0.35, 0.35),
-scene.add(airPlaneGroup);
+  scene.add(airPlaneGroup);
 
 function generateAirPlane() {
   const matWhite = new THREE.MeshStandardMaterial({
@@ -264,38 +264,38 @@ function generateAirPlane() {
 
   const headGeo = new THREE.TorusGeometry(0.35, 0.2, 8, 20);
   const head = new THREE.Mesh(headGeo, matWhite);
-  head.rotation.set(0, Math.PI/2, 0);
+  head.rotation.set(0, Math.PI / 2, 0);
   head.position.set(0.95, 0, 0);
   airPlaneGroup.add(head);
 
   const bodyGeo = new THREE.CylinderGeometry(0.5, 0.5, 0.5, 20, 1, true);
   const body = new THREE.Mesh(bodyGeo, matPurple);
-  body.rotation.set(0, 0, Math.PI/2);
+  body.rotation.set(0, 0, Math.PI / 2);
   body.position.set(0.6, 0, 0);
   airPlaneGroup.add(body);
 
   const tailGeo = new THREE.CylinderGeometry(0.3, 0.5, 0.7, 20, 1, true);
   const tail = new THREE.Mesh(tailGeo, matPurple);
-  tail.rotation.set(0, 0, Math.PI/2);
+  tail.rotation.set(0, 0, Math.PI / 2);
   tail.position.set(0, 0, 0);
   airPlaneGroup.add(tail);
 
   const endGeo = new THREE.ConeGeometry(0.3, 0.3, 20, 1, true);
   const end = new THREE.Mesh(endGeo, matPurple);
-  end.rotation.set(0, 0, Math.PI/2);
+  end.rotation.set(0, 0, Math.PI / 2);
   end.position.set(-0.5, 0, 0);
   airPlaneGroup.add(end);
 
   const fanCenGeo = new THREE.ConeGeometry(0.2, 0.3, 20, 1, true);
   const fanCen = new THREE.Mesh(fanCenGeo, matPurple);
-  fanCen.rotation.set(0, 0, -Math.PI/2);
+  fanCen.rotation.set(0, 0, -Math.PI / 2);
   fanCen.position.set(1.3, 0, 0);
   airPlaneGroup.add(fanCen);
 
-  const wingGeo = new THREE.BoxGeometry( 0.7, 0.06, 3);
+  const wingGeo = new THREE.BoxGeometry(0.7, 0.06, 3);
   const wing = new THREE.Mesh(wingGeo, matWhite);
   wing.position.set(0.4, 0.15, 0);
-  wing.rotation.set(0, 0, Math.PI/20);
+  wing.rotation.set(0, 0, Math.PI / 20);
   airPlaneGroup.add(wing);
 
   const wheelGeo = new THREE.TorusGeometry(0.12, 0.13, 10, 10);
@@ -314,7 +314,7 @@ function generateAirPlane() {
   const helmet = new THREE.Mesh(wheelGeo, matBlack);
   helmet.scale.set(1, 1.5, 1);
   helmet.position.set(0.375, 0.65, 0);
-  helmet.rotation.set(Math.PI/2, 0, 0);
+  helmet.rotation.set(Math.PI / 2, 0, 0);
   airPlaneGroup.add(helmet);
 }
 
@@ -328,10 +328,10 @@ function onWindowResize() {
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
   //Refresh middle project on screen
-  document.querySelectorAll(".webProject")[currentWebSlide-1].classList.remove("is-in");
-  document.querySelectorAll(".dotWeb")[currentWebSlide-1].classList.remove("is-at");
-  document.querySelectorAll(".gameProject")[currentGameSlide-1].classList.remove("is-in");
-  document.querySelectorAll(".dotGame")[currentGameSlide-1].classList.remove("is-at");
+  document.querySelectorAll(".webProject")[currentWebSlide - 1].classList.remove("is-in");
+  document.querySelectorAll(".dotWeb")[currentWebSlide - 1].classList.remove("is-at");
+  document.querySelectorAll(".gameProject")[currentGameSlide - 1].classList.remove("is-in");
+  document.querySelectorAll(".dotGame")[currentGameSlide - 1].classList.remove("is-at");
   webSlidePos = 0;
   currentWebSlide = Math.ceil(totalWebSlide / 2);
   gameSlidePos = 0;
@@ -370,7 +370,7 @@ function onTouchMove(event) {
 window.addEventListener("touchmove", onTouchMove, false);
 
 //UPDATE ACTIVE SECTION ON SCREEN
-let options = {rootMargin: "0px", threshold: 0.75};
+let options = { rootMargin: "0px", threshold: 0.75 };
 const callback = (entries) => {
   entries.forEach((entry) => {
     const { target } = entry;
@@ -390,7 +390,7 @@ document.querySelectorAll("section").forEach((section) => {
 const hamburgerLine = document.querySelectorAll(".line");
 document
   .querySelector(".hamburger")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     if (this.classList.contains("is-active")) {
       this.classList.remove("is-active");
       document.querySelector(".subMenu").style.display = "none";
@@ -398,16 +398,16 @@ document
       this.classList.add("is-active");
       document.querySelector(".subMenu").style.display = "flex";
     }
-});
+  });
 
 //COLLAPSE SUBMENU ON CHOOSE
 const navLinks = document.querySelectorAll(".navEach");
 navLinks.forEach((each) => {
-  each.addEventListener("click", function(event) {
+  each.addEventListener("click", function (event) {
     if (document.querySelector(".subMenu").style.display === "flex") {
       document.querySelector(".subMenu").style.display = "none";
       document.querySelector(".hamburger").classList.remove("is-active");
-    } 
+    }
   })
 })
 
@@ -418,11 +418,11 @@ let currentWebSlide = Math.ceil(totalWebSlide / 2);
 //Next web
 document
   .querySelector("#nextWebButton")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     const whoosh = new Audio("./audios/Whoosh.mp3");
     whoosh.play();
-    document.querySelectorAll(".webProject")[currentWebSlide-1].classList.remove("is-in");
-    document.querySelectorAll(".dotWeb")[currentWebSlide-1].classList.remove("is-at");
+    document.querySelectorAll(".webProject")[currentWebSlide - 1].classList.remove("is-in");
+    document.querySelectorAll(".dotWeb")[currentWebSlide - 1].classList.remove("is-at");
     if (currentWebSlide === totalWebSlide) {
       webSlidePos = -(webSlidePos);
       currentWebSlide = 1;
@@ -430,15 +430,15 @@ document
       webSlidePos = webSlidePos - document.querySelector("#webWrapper").getBoundingClientRect().width / totalWebSlide;
       currentWebSlide = currentWebSlide + 1;
     }
-});
+  });
 //Previous web
 document
   .querySelector("#prevWebButton")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     const whoosh = new Audio("./audios/Whoosh.mp3");
     whoosh.play();
-    document.querySelectorAll(".webProject")[currentWebSlide-1].classList.remove("is-in");
-    document.querySelectorAll(".dotWeb")[currentWebSlide-1].classList.remove("is-at");
+    document.querySelectorAll(".webProject")[currentWebSlide - 1].classList.remove("is-in");
+    document.querySelectorAll(".dotWeb")[currentWebSlide - 1].classList.remove("is-at");
     if (currentWebSlide === 1) {
       webSlidePos = -(webSlidePos);
       currentWebSlide = totalWebSlide;
@@ -446,7 +446,7 @@ document
       webSlidePos = document.querySelector("#webWrapper").getBoundingClientRect().width / totalWebSlide + webSlidePos;
       currentWebSlide = currentWebSlide - 1;
     }
-});
+  });
 
 //GAME SLIDE
 const totalGameSlide = document.querySelectorAll(".gameProject").length;
@@ -455,11 +455,11 @@ let currentGameSlide = Math.ceil(totalGameSlide / 2);
 //Next game
 document
   .querySelector("#nextGameButton")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     const whoosh = new Audio("./audios/Whoosh.mp3");
     whoosh.play();
-    document.querySelectorAll(".gameProject")[currentGameSlide-1].classList.remove("is-in");
-    document.querySelectorAll(".dotGame")[currentGameSlide-1].classList.remove("is-at");
+    document.querySelectorAll(".gameProject")[currentGameSlide - 1].classList.remove("is-in");
+    document.querySelectorAll(".dotGame")[currentGameSlide - 1].classList.remove("is-at");
     if (currentGameSlide === totalGameSlide) {
       gameSlidePos = -(gameSlidePos);
       currentGameSlide = 1;
@@ -467,15 +467,15 @@ document
       gameSlidePos = gameSlidePos - document.querySelector("#gameWrapper").getBoundingClientRect().width / totalGameSlide;
       currentGameSlide = currentGameSlide + 1;
     }
-});
+  });
 //Previous game
 document
   .querySelector("#prevGameButton")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     const whoosh = new Audio("./audios/Whoosh.mp3");
     whoosh.play();
-    document.querySelectorAll(".gameProject")[currentGameSlide-1].classList.remove("is-in");
-    document.querySelectorAll(".dotGame")[currentGameSlide-1].classList.remove("is-at");
+    document.querySelectorAll(".gameProject")[currentGameSlide - 1].classList.remove("is-in");
+    document.querySelectorAll(".dotGame")[currentGameSlide - 1].classList.remove("is-at");
     if (currentGameSlide === 1) {
       gameSlidePos = -(gameSlidePos);
       currentGameSlide = totalGameSlide;
@@ -483,12 +483,12 @@ document
       gameSlidePos = document.querySelector("#gameWrapper").getBoundingClientRect().width / totalGameSlide + gameSlidePos;
       currentGameSlide = currentGameSlide - 1;
     }
-});
+  });
 
 //IMAGE SLIDE
 //Next image
 document.querySelectorAll(".nextImg").forEach((each) => {
-  each.addEventListener("click", function(event) {
+  each.addEventListener("click", function (event) {
     const whoosh = new Audio("./audios/Whoosh.mp3");
     whoosh.play();
     const amount = this.closest(".project").children[2].children[1].children.length;
@@ -496,12 +496,12 @@ document.querySelectorAll(".nextImg").forEach((each) => {
     if (currentImage < amount) {
       const step = this.closest(".project").children[1].getBoundingClientRect().width * currentImage;
       this.closest(".project").children[1].children[0].style.translate = "-" + step + "px";
-      this.closest(".project").children[2].children[1].children[currentImage-1].classList.remove("is-focus");
+      this.closest(".project").children[2].children[1].children[currentImage - 1].classList.remove("is-focus");
       this.closest(".project").children[2].children[1].children[currentImage].classList.add("is-focus");
       this.closest(".project").children[3].style.width = (currentImage + 1) + "px";
     } else {
       this.closest(".project").children[1].children[0].style.translate = 0;
-      this.closest(".project").children[2].children[1].children[currentImage-1].classList.remove("is-focus");
+      this.closest(".project").children[2].children[1].children[currentImage - 1].classList.remove("is-focus");
       this.closest(".project").children[2].children[1].children[0].classList.add("is-focus");
       this.closest(".project").children[3].style.width = "1px";
     }
@@ -509,7 +509,7 @@ document.querySelectorAll(".nextImg").forEach((each) => {
 })
 //Previous image
 document.querySelectorAll(".prevImg").forEach((each) => {
-  each.addEventListener("click", function(event) {
+  each.addEventListener("click", function (event) {
     const whoosh = new Audio("./audios/Whoosh.mp3");
     whoosh.play();
     const amount = this.closest(".project").children[2].children[1].children.length;
@@ -517,14 +517,14 @@ document.querySelectorAll(".prevImg").forEach((each) => {
     if (currentImage > 1) {
       const step = this.closest(".project").children[1].getBoundingClientRect().width * (currentImage - 2);
       this.closest(".project").children[1].children[0].style.translate = "-" + step + "px";
-      this.closest(".project").children[2].children[1].children[currentImage-1].classList.remove("is-focus");
-      this.closest(".project").children[2].children[1].children[currentImage-2].classList.add("is-focus");
+      this.closest(".project").children[2].children[1].children[currentImage - 1].classList.remove("is-focus");
+      this.closest(".project").children[2].children[1].children[currentImage - 2].classList.add("is-focus");
       this.closest(".project").children[3].style.width = (currentImage - 1) + "px";
     } else {
       const step = this.closest(".project").children[1].getBoundingClientRect().width * (amount - 1);
       this.closest(".project").children[1].children[0].style.translate = "-" + step + "px";
-      this.closest(".project").children[2].children[1].children[currentImage-1].classList.remove("is-focus");
-      this.closest(".project").children[2].children[1].children[amount-1].classList.add("is-focus");
+      this.closest(".project").children[2].children[1].children[currentImage - 1].classList.remove("is-focus");
+      this.closest(".project").children[2].children[1].children[amount - 1].classList.add("is-focus");
       this.closest(".project").children[3].style.width = amount + "px";
     }
   });
@@ -533,27 +533,27 @@ document.querySelectorAll(".prevImg").forEach((each) => {
 // OPEN CONTACT FORM
 document
   .querySelector(".secMail")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     document.querySelector("#contactForm").classList.remove("hidden_layer");
     document.querySelector("nav").classList.add("nav_hidden");
     document.querySelector("footer").classList.add("nav_hidden");
     setTimeout(() => {
       document.querySelector("#contactForm").style.opacity = 1;
     }, '10');
-});
+  });
 document
   .querySelector("#closeContactForm")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     document.querySelector("nav").classList.remove("nav_hidden");
     document.querySelector("footer").classList.remove("nav_hidden");
     document.querySelector("#contactForm").style.opacity = 0;
     setTimeout(() => {
       document.querySelector("#contactForm").classList.add("hidden_layer");
     }, '500');
-});
+  });
 document
   .querySelector("#contact_form_submit")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     const name = document.querySelector("#contact_name").value;
     const email = document.querySelector("#contact_email").value;
     const subject = document.querySelector("#contact_subject").value;
@@ -574,22 +574,22 @@ document
       if (emailValid) {
         document.querySelector("#contact_form_submit").classList.add("secMail_active");
         fetch('https://api.emailjs.com/api/v1.0/email/send', {
-            method: 'POST',
-            headers: {
-              'Content-type': 'application/json'
-            },
-            body: JSON.stringify({
-              user_id: 'FCPt1EIYp5ib1ELvH',
-              service_id: 'service_gbz0gz8',
-              template_id: 'template_2uwkp26',
-              template_params: {
-                  'name': name,
-                  'email': email,
-                  'subject': subject,
-                  'message': message
-              }
-            })
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            user_id: 'FCPt1EIYp5ib1ELvH',
+            service_id: 'service_gbz0gz8',
+            template_id: 'template_2uwkp26',
+            template_params: {
+              'name': name,
+              'email': email,
+              'subject': subject,
+              'message': message
+            }
           })
+        })
           .then((httpResponse) => {
             document.querySelector("#contact_form_submit").classList.remove("secMail_active");
             if (httpResponse.ok) {
@@ -637,12 +637,12 @@ document
         }, '3000');
       }
     }
-});
+  });
 
 //BUTTON BACK TO TOP
 document
   .querySelector(".backToTop")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     highLightNavLink(1);
     changeFooter(1);
     toggleStars(black);
@@ -650,14 +650,14 @@ document
     lightBackColor.setHex(red);
     rectLightColor.setHex(purple);
     updateCamPos.set(-0.3, 0, 5);
-});
+  });
 
 //SOUND TOGGLE
 const backgroundSound = new Audio("./audios/Gratitude_Spiritual-Moment.mp3");
 let soundOn = false;
 document
   .querySelector(".sound")
-  .addEventListener("click", function(event) {
+  .addEventListener("click", function (event) {
     if (soundOn === true) {
       this.style.opacity = 1;
       backgroundSound.pause();
@@ -669,13 +669,13 @@ document
       backgroundSound.volume = 0.5;
       backgroundSound.loop = true;
       this.style.backgroundImage = "url('./icons/icon-sound-96.webp')";
-    soundOn = true;
+      soundOn = true;
     }
-});
+  });
 
 //WHOOSH SOUND
 document.querySelectorAll("a").forEach((each) => {
-  each.addEventListener("click", function(event) {
+  each.addEventListener("click", function (event) {
     const whoosh = new Audio("./audios/Whoosh.mp3");
     whoosh.play();
   });
@@ -701,7 +701,7 @@ function highLightNavLink(number) {
     navLinks[number + 2].style.color = "goldenrod";
     navLinks[number + 2].style.fontStyle = "italic";
     navLinks[number + 2].classList.add("is-on");
-    hamburgerLine[number-2].style.backgroundColor = "goldenrod";
+    hamburgerLine[number - 2].style.backgroundColor = "goldenrod";
   }
 }
 //highlight hamburger line
@@ -710,7 +710,7 @@ function highLightHamburger(number) {
     each.style.backgroundColor = "beige";
   });
   if (number > 1) {
-    hamburgerLine[number-2].style.backgroundColor = "goldenrod";
+    hamburgerLine[number - 2].style.backgroundColor = "goldenrod";
   }
 }
 //change footer according to section
@@ -769,7 +769,7 @@ const animate = () => {
   //Scene1
   //Particles spin around
   particlesGroup.rotation.y += 0.004;
-  
+
   //Particles rotate
   const time = performance.now() * 0.0003;
   particlesGroup.children.forEach((each) => {
@@ -777,7 +777,7 @@ const animate = () => {
     each.rotation.y += each.speedValue / 10;
     each.rotation.z += each.speedValue / 10;
   })
-  
+
   //Cubes rotate & fly around
   cubesGroup.children.forEach((each) => {
     each.rotation.x += 0.008;
@@ -787,15 +787,15 @@ const animate = () => {
     each.position.y = Math.cos(time * each.positionX) * each.positionZ;
     each.position.z = Math.sin(time * each.positionY) * each.positionX;
   })
-  
+
   //Cube group rotate follow mouse
   cubesGroup.rotation.y -= (mouse.x * 4 + cubesGroup.rotation.y) * 0.1;
   cubesGroup.rotation.x -= (-mouse.y * 4 + cubesGroup.rotation.x) * 0.1;
-  
+
   //Scene2
   //Earth spin around
   earthGroup.rotation.y -= 0.005;
-  
+
   //Earth wave
   earthGroup.children[0].geometry.positionData.forEach((p, idx) => {
     let setNoise = noise(p.x, p.y, p.z, clock.getElapsedTime());
@@ -805,11 +805,11 @@ const animate = () => {
   })
   earthGroup.children[0].geometry.computeVertexNormals();
   earthGroup.children[0].geometry.attributes.position.needsUpdate = true;
-  
+
   //Airplane fan
   airPlaneGroup.children[0].rotation.x += 0.3;
   airPlaneGroup.children[1].rotation.x += 0.3;
-  
+
   //Airplane flag
   for (let i = 0; i < flagVertexCount; i++) {
     const x = airPlaneGroup.children[2].geometry.attributes.position.getX(i);
@@ -908,14 +908,14 @@ const animate = () => {
 
   //Update web project slide
   document.querySelector("#webWrapper").style.translate = webSlidePos + "px";
-  document.querySelectorAll(".dotWeb")[currentWebSlide-1].classList.add("is-at");
-  document.querySelectorAll(".webProject")[currentWebSlide-1].classList.add("is-in");
+  document.querySelectorAll(".dotWeb")[currentWebSlide - 1].classList.add("is-at");
+  document.querySelectorAll(".webProject")[currentWebSlide - 1].classList.add("is-in");
 
   //Update game project slide
   document.querySelector("#gameWrapper").style.translate = gameSlidePos + "px";
-  document.querySelectorAll(".dotGame")[currentGameSlide-1].classList.add("is-at");
-  document.querySelectorAll(".gameProject")[currentGameSlide-1].classList.add("is-in");
-  
+  document.querySelectorAll(".dotGame")[currentGameSlide - 1].classList.add("is-at");
+  document.querySelectorAll(".gameProject")[currentGameSlide - 1].classList.add("is-in");
+
   //Update screen
   camera.position.lerp(updateCamPos, 0.05);
   lightTop.color.lerp(lightTopColor, 0.05);

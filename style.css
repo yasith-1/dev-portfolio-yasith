@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
 
 html {
   background: black;
@@ -165,7 +165,7 @@ nav {
   position: relative;
   font-family: "Poppins", sans-serif;
   font-size: 30;
-  font-weight:200;
+  font-weight: 200;
   text-decoration: none;
   color: beige;
 }
@@ -411,7 +411,6 @@ section {
   background-position: 0;
   animation: moveGradient 6s alternate infinite;
 }
-
 
 .skill {
   margin-top: 10px;
@@ -761,12 +760,7 @@ section {
   height: 40px;
   border-radius: 10px;
   box-shadow: 1px 0 10px 0 rgb(216, 0, 220);
-  background: linear-gradient(
-    132deg,
-    #6424dc,
-    #f80759,
-    #ff9318
-  );
+  background: linear-gradient(132deg, #6424dc, #f80759, #ff9318);
   background-size: 300%;
   background-position: 0;
   animation: moveGradient 8s alternate infinite;
@@ -818,12 +812,7 @@ section {
   justify-content: center;
   gap: 5px;
   box-shadow: 1px 0 10px 0 rgb(216, 0, 220);
-  background: linear-gradient(
-    132deg,
-    #ff9318,
-    #f80759,
-    #6424dc
-  );
+  background: linear-gradient(132deg, #ff9318, #f80759, #6424dc);
   background-size: 300%;
   background-position: 0;
   animation: moveGradient 8s alternate infinite;
@@ -937,7 +926,8 @@ section {
   flex-direction: column;
   gap: 15px;
 }
-input, textarea {
+input,
+textarea {
   width: 100%;
   background: none;
   border: #6424dc solid;
@@ -954,7 +944,8 @@ input {
 textarea {
   padding: 0 0 20px 10px;
 }
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-size: 20px;
 }
 .contact_form input:nth-of-type(1)::placeholder {
@@ -972,7 +963,8 @@ input::placeholder, textarea::placeholder {
 .contact_form textarea::placeholder {
   color: aqua;
 }
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 #contact_form_submit {
@@ -1014,7 +1006,7 @@ textarea:focus, input:focus{
   animation-delay: 0.2s;
 }
 @keyframes loadingdots {
-  0%  {
+  0% {
     translate: 0 0;
   }
   25% {
@@ -1028,7 +1020,9 @@ textarea:focus, input:focus{
   }
 }
 
-.contact_form_missing, .contact_form_mail_inv, .contact_form_mail_error {
+.contact_form_missing,
+.contact_form_mail_inv,
+.contact_form_mail_error {
   text-shadow: #e33244 0 0 10px;
   animation: fadeaway 3s ease forwards;
 }
@@ -1070,7 +1064,7 @@ textarea:focus, input:focus{
   width: 2px;
   height: 24px;
   border-radius: 1px;
-  background:inherit;
+  background: inherit;
   box-shadow: inherit;
   animation: next 2s infinite;
   rotate: -45deg;
@@ -1084,21 +1078,21 @@ textarea:focus, input:focus{
   bottom: 0;
   width: 24px;
   height: 2px;
-  background:inherit;
+  background: inherit;
   box-shadow: inherit;
 }
 .next:nth-of-type(1) {
-  background:rgb(189, 255, 123);
+  background: rgb(189, 255, 123);
   box-shadow: 0px 0 5px 2px rgba(128, 255, 0, 0.725);
 }
 .next:nth-of-type(2) {
-  background:rgb(255, 214, 117);
+  background: rgb(255, 214, 117);
   box-shadow: 0px 0 5px 2px rgba(255, 203, 80, 0.725);
   translate: 0 -3px;
   animation-delay: 0.15s;
 }
 .next:nth-of-type(3) {
-  background:rgb(255, 128, 185);
+  background: rgb(255, 128, 185);
   box-shadow: 0px 0 5px 2px rgba(255, 80, 159, 0.725);
   translate: 0 -6px;
   animation-delay: 0.3s;
@@ -1109,7 +1103,12 @@ textarea:focus, input:focus{
   }
 }
 
-.content1, .content2, .content3, .content4, .content5, .content6 {
+.content1,
+.content2,
+.content3,
+.content4,
+.content5,
+.content6 {
   opacity: 0;
   translate: 0 80px;
 }
@@ -1117,23 +1116,31 @@ textarea:focus, input:focus{
   transition: opacity 1s 0.1s, translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99);
 }
 .content2 {
-  transition: opacity 1s 0.3s, translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.2s;
+  transition: opacity 1s 0.3s,
+    translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.2s;
 }
 .content3 {
-  transition: opacity 1s 0.5s, translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.4s;
+  transition: opacity 1s 0.5s,
+    translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.4s;
 }
 .content4 {
-  transition: opacity 1s 0.7s, translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.6s;
+  transition: opacity 1s 0.7s,
+    translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.6s;
 }
 .content5 {
-  transition: opacity 1s 0.9s, translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.8s;
+  transition: opacity 1s 0.9s,
+    translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 0.8s;
 }
 .content6 {
-  transition: opacity 1s 1.1s, translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 1s;
+  transition: opacity 1s 1.1s,
+    translate 1s cubic-bezier(0.13, 0.07, 0.26, 0.99) 1s;
 }
-.is-visible .content1, .is-visible .content2,
-.is-visible .content3, .is-visible .content4,
-.is-visible .content5, .is-visible .content6 {
+.is-visible .content1,
+.is-visible .content2,
+.is-visible .content3,
+.is-visible .content4,
+.is-visible .content5,
+.is-visible .content6 {
   opacity: 1;
   translate: 0 0;
 }
@@ -1299,7 +1306,7 @@ footer {
     width: 30px;
     height: 30px;
   }
-  .secPortTit{
+  .secPortTit {
     margin-top: 19vh;
     font-size: 25px;
     line-height: 25px;
