@@ -711,7 +711,7 @@ section {
   font-size: 40px;
   line-height: 32px;
   text-shadow: 0 0 30px white;
-  margin-top: 18vh;
+  margin-top: 20vh;
 }
 .hand {
   width: 40px;
@@ -1270,7 +1270,9 @@ footer {
     transform: translateX(15px);
   }
 }
-@media only screen and (max-width: 480px) {
+
+/* Responsive */
+/* @media only screen and (max-width: 480px) {
   nav {
     padding: 30px 10vw 50px 10vw;
   }
@@ -1383,5 +1385,314 @@ footer {
   }
   .copyright {
     font-size: 16px;
+  }
+} */
+
+/* Base styles for all devices */
+nav {
+  padding: 30px 5vw;
+}
+
+.navBig {
+  display: flex;
+}
+
+.navSmall {
+  display: none;
+}
+
+section {
+  margin: 0 5vw;
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+  nav {
+    padding: 20px 5vw 30px 5vw;
+  }
+  
+  .navBig {
+    display: none;
+  }
+  
+  .navSmall {
+    display: flex;
+  }
+  
+  .subMenu {
+    padding: 60px 5vw 100px 70vw;
+  }
+  
+  section {
+    margin: 0 5vw;
+  }
+  
+  #section2 {
+    justify-content: flex-start;
+  }
+  
+  .sec2Part {
+    max-width: 90vw;
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .sec2Part:nth-of-type(1) {
+    margin-top: 15vh;
+  }
+  
+  .lineSec2 {
+    width: 30vw;
+    margin: 12px 0;
+  }
+  
+  .softwareIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .secPortTit {
+    margin-top: 15vh;
+    font-size: 22px;
+    line-height: 24px;
+  }
+  
+  .secPortDes {
+    font-size: 20px;
+  }
+  
+  .secPortFrame {
+    margin: 1vh 0;
+  }
+  
+  .project {
+    width: 90vw;
+    margin: 0 4px 10px 4px;
+  }
+  
+  .picture {
+    width: 90vw;
+  }
+  
+  .projectSoftware {
+    padding: 15px 15px 50px 15px;
+  }
+  
+  .imgButton {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .projectDes {
+    width: 100%;
+    margin: 8px 0 20px 0;
+    gap: 8px;
+  }
+  
+  .seemoreButton {
+    padding: 6px 8px;
+  }
+  
+  .seemore {
+    font-size: 14px;
+  }
+  
+  .leftright {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .leftright:nth-of-type(1) {
+    transform: translateX(-15px);
+  }
+  
+  .leftright:nth-of-type(2) {
+    transform: translateX(15px);
+  }
+  
+  .sec5Tit {
+    font-size: 26px;
+    margin-top: 12vh;
+  }
+  
+  .hand {
+    width: 26px;
+    height: 26px;
+  }
+  
+  footer {
+    padding: 2vh 5vw 0 5vw;
+    gap: 15px;
+  }
+  
+  .endPage {
+    gap: 15px;
+  }
+  
+  .sound, .moveUp, .backToTop {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .copyright {
+    font-size: 14px;
+  }
+}
+
+/* Small devices (landscape phones, 576px to 767px) */
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  nav {
+    padding: 25px 8vw 40px 8vw;
+  }
+  
+  .navBig {
+    display: none;
+  }
+  
+  .navSmall {
+    display: flex;
+  }
+  
+  .subMenu {
+    padding: 70px 8vw 110px 75vw;
+  }
+  
+  .sec2Part {
+    max-width: 70vw;
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  
+  .sec2Part:nth-of-type(1) {
+    margin-top: 16vh;
+  }
+  
+  .lineSec2 {
+    width: 25vw;
+    margin: 15px 0;
+  }
+  
+  .softwareIcon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .secPortTit {
+    margin-top: 17vh;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  
+  .project {
+    width: 75vw;
+    margin: 0 6px 12px 6px;
+  }
+  
+  .picture {
+    width: 75vw;
+  }
+  
+  .seemoreButton {
+    padding: 7px 10px;
+  }
+  
+  .seemore {
+    font-size: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  nav {
+    padding: 30px 10vw 50px 10vw;
+  }
+  
+  .subMenu {
+    padding: 75px 10vw 120px 80vw;
+  }
+  
+  .sec2Part {
+    max-width: 60vw;
+    margin: 12px 0;
+    font-size: 17px;
+    line-height: 24px;
+  }
+  
+  .sec2Part:nth-of-type(1) {
+    margin-top: 18vh;
+  }
+  
+  .lineSec2 {
+    width: 20vw;
+    margin: 18px 0;
+  }
+  
+  .secPortTit {
+    margin-top: 18vh;
+    font-size: 28px;
+  }
+  
+  .project {
+    width: 60vw;
+    margin: 0 10px 15px 10px;
+  }
+  
+  .picture {
+    width: 60vw;
+  }
+}
+
+/* Large devices (desktops, 992px to 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sec2Part {
+    max-width: 50vw;
+  }
+  
+  .project {
+    width: 45vw;
+  }
+  
+  .picture {
+    width: 45vw;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .sec2Part {
+    max-width: 40vw;
+  }
+  
+  .project {
+    width: 35vw;
+  }
+  
+  .picture {
+    width: 35vw;
+  }
+}
+
+/* For very large screens (optional) */
+@media only screen and (min-width: 1600px) {
+  nav {
+    padding: 35px 12vw 60px 12vw;
+  }
+  
+  section {
+    margin: 0 12vw;
+  }
+  
+  .sec2Part {
+    max-width: 30vw;
+  }
+  
+  .project {
+    width: 28vw;
+  }
+  
+  .picture {
+    width: 28vw;
   }
 }
