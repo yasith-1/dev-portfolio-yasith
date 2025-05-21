@@ -153,6 +153,11 @@ nav {
   }
 }
 
+.bot-animation{
+  margin-top: 100px;
+  width: 100px;
+}
+
 .navBig {
   display: flex;
   gap: 30px;
@@ -350,7 +355,7 @@ section {
   text-shadow: 0 0 30px white;
 }
 .sec1Name {
-  margin-top: -12px;
+  margin-top: -25px;
   flex-wrap: wrap;
   color: beige;
   font-size: 40px;
